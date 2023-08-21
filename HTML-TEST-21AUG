@@ -1,0 +1,239 @@
+Question -1 =====>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .image-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-item:hover .image {
+    transform: scale(1.1);
+  }
+</style>
+<title>Image Grid with Hover Zoom</title>
+</head>
+<body>
+<div class="image-grid">
+  <div class="image-item">
+    <img class="image" src="https://img.freepik.com/free-photo/isolated-happy-smiling-dog-white-background-portrait-4_1562-693.jpg">
+  </div>
+  <div class="image-item">
+    <img class="image" src="https://img.freepik.com/free-photo/isolated-happy-smiling-dog-white-background-portrait-4_1562-693.jpg">
+  </div>
+  <div class="image-item">
+    <img class="image" src="https://img.freepik.com/free-photo/isolated-happy-smiling-dog-white-background-portrait-4_1562-693.jpg">
+  </div>
+  <div class="image-item">
+    <img class="image" src="https://img.freepik.com/free-photo/isolated-happy-smiling-dog-white-background-portrait-4_1562-693.jpg">
+  </div>
+</div>
+</body>
+</html>
+
+
+
+Question -2 ====>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  .required-label {
+    color: red;
+  }
+
+  .form-field {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  .form-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .form-button.cancel {
+    background-color: #ccc;
+  }
+</style>
+<title>Registration Form</title>
+</head>
+<body>
+<table>
+  <form>
+    <tr>
+      <th><label for="first-name">First Name  <span class="required-label">*</span> </label></th>
+      <td><input type="text" id="first-name" class="form-field" required></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><input type="text" id="last-name" class="form-field"></td>
+    </tr>
+    <tr>
+      <th><label for="mobile"> Mobile No<span class="required-label">*</span> </label></th>
+      <td><input type="tel" id="mobile" class="form-field" pattern="[0-9]+" required></td>
+    </tr>
+    <tr>
+      <th><label for="email"> Email<span class="required-label">*</span> </label></th>
+      <td><input type="email" id="email" class="form-field" required></td>
+    </tr>
+    <tr>
+      <th>Date of Birth</th>
+      <td><input type="date" id="dob" class="form-field"></td>
+    </tr>
+    <tr>
+      <th><label for="password">Password <span class="required-label">*</span> </label></th>
+      <td><input type="password" id="password" class="form-field" required></td>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <td>
+        <select id="country" class="form-field">
+        <option value="india">India</option>
+          <option value="usa">United States</option>
+          <option value="canada">Canada</option>
+        
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th> Qualifications<label class="required-label">*</label> </th>
+      <td>
+        <input type="checkbox" id="qualification1" value="bachelors">
+        <label for="qualification1">Bachelor's</label>
+        <input type="checkbox" id="qualification2" value="masters">
+        <label for="qualification2">Master's</label>
+        <input type="checkbox" id="qualification3" value="phd">
+        <label for="qualification3">PhD</label>
+      </td>
+    </tr>
+    <tr>
+      <th>Gender<label class="required-label">*</label> </th>
+      <td>
+        <input type="radio" id="gender-male" name="gender" value="male" required>
+        <label for="gender-male">Male</label>
+        <input type="radio" id="gender-female" name="gender" value="female" required>
+        <label for="gender-female">Female</label>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <button type="submit" class="form-button">Register</button>
+        <button type="reset" class="form-button cancel">Cancel</button>
+      </td>
+    </tr>
+  </form>
+</table>
+</body>
+</html>
+
+
+
+
+
+question -3 ========>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Highlighted Table Rows</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td>Row 1, Cell 1</td>
+    <td>Row 1, Cell 2</td>
+    <td>Row 1, Cell 3</td>
+  </tr>
+  <tr>
+    <td>Row 2, Cell 1</td>
+    <td>Row 2, Cell 2</td>
+    <td>Row 2, Cell 3</td>
+  </tr>
+  <tr>
+    <td>Row 3, Cell 1</td>
+    <td>Row 3, Cell 2</td>
+    <td>Row 3, Cell 3</td>
+  </tr>
+  <tr>
+    <td>Row 4, Cell 1</td>
+    <td>Row 4, Cell 2</td>
+    <td>Row 4, Cell 3</td>
+  </tr>
+</table>
+</body>
+</html>
+
+
+
+styles.css==>>>
+
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    background-color: lightgrey;
+  }
+  
+  
+  table tr {
+    border: 1px solid black;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  table tr:hover {
+    background-color: yellow;
+  }
+  
+
+  table td {
+    padding: 10px;
+    border: 1px solid black;
+  }
+  
