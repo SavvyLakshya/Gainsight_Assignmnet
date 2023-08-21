@@ -1,0 +1,31 @@
+Ques -1 ====>>>>>>>>>>
+
+SELECT d.deptno, d.dept_name, d.dept_manager, a.city, a.state, e.emp_no, e.emp_name, e.emp_sal
+FROM department AS d
+INNER JOIN address AS a ON d.address_id = a.address_id
+INNER JOIN employee AS e ON d.deptno = e.deptno;
+
+
+
+
+Ques -2  ======>>>>>>>>
+
+create table bankaccount(acc_no int primary key , acc_opened_date date, status text, balance double);
+
+create table transaction(acc_no int, trans_type text, trans_date date, trans_amount double, foreign key(acc_no) references bankaccount(acc_no) on delete cascade);
+
+
+
+
+Ques -3 =====>>>>>>>>
+
+
+SELECT manager_name, department, SUM(emp_sal) AS total_salary
+FROM employee
+GROUP BY manager_name, department;
+
+
+SELECT DISTINCT emp_sal
+FROM employee
+ORDER BY emp_sal DESC
+LIMIT 1 OFFSET 3;
