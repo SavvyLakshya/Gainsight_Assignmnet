@@ -1,0 +1,58 @@
+package org.example;
+
+import java.sql.*;
+
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
+public class OrderedProductsDao {
+
+    // Press Opt+Enter with your caret at the highlighted text to see how
+    // IntelliJ IDEA suggests fixing it.
+
+    private static String url = "jdbc:mysql://localhost:3306/employee";
+
+    Product product;
+    Orders orders;
+
+    public void displayOrderedProductById(int productId) {
+
+        Orders orders = null;
+        try (
+
+                Connection con = DriverManager.getConnection(url, "root", "Lakshya@12");
+                PreparedStatement preparedStatement = con.prepareStatement("select * from Product PROD, ordered_products ORDEREDPROD, orders ORDERS where PROD.prod_id = OREREDPROD.prod_id and OREREDPROD.order_id = ORDERS.order_id and ORDERS.order_date = ?")) {
+            preparedStatement.setInt(1, productId);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                Product product = new Product(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getInt(5));
+                System.out.println(product);
+            }
+
+
+        } catch (SQLException e) {
+
+
+            e.printStackTrace();
+
+        }
+    }
+
+    public void displayOrderedProductsByOrderDate(String orderDate) {
+
+        try (
+
+                Connection con = DriverManager.getConnection(url, "root", "Lakshya@12");
+                PreparedStatement preparedStatement = con.prepareStatement("select * from Product PROD, ordered_products OREREDPROD, orders ORDERS where PROD.prod_id = OREREDPROD.prod_id and OREREDPROD.order_id = ORDERS.order_id and ORDERS.order_date = ?")) {
+            preparedStatement.setString(1, orderDate);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                Product product = new Product(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getInt(5));
+                System.out.println(product);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+    }
+}
